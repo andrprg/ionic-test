@@ -1,0 +1,32 @@
+
+/* размеры */
+@mixin main() {
+  /* размеры */
+  :host {
+    ion-content {
+      .ios & {
+        $base: 414px;
+        @each $size in 1024px, 768px, 414px, 375px, 360px, 320px {
+          @media screen and (max-width: $size) {
+            $koeff: $size / $base;
+            @include size($koeff);
+          }
+        }
+      }
+
+      .md & {
+        $base: 414px;
+        @each $size in 360px, 414px {
+          @media screen and (max-width: $size) {
+            $koeff: $size / $base;
+            @include size($koeff);
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+

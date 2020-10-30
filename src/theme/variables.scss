@@ -74,4 +74,24 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  $coeff: 1;
+  .ios & {
+    $base: 414px;
+    @each $size in 1024px, 768px, 414px, 375px, 360px, 320px {
+      @media screen and (max-width: $size) {
+        $coeff: $size / $base;
+      }
+    }
+  }
+
+  .md & {
+    $base: 414px;
+    @each $size in 360px, 414px {
+      @media screen and (max-width: $size) {
+        $coeff: $size / $base;
+      }
+    }
+  }
+
 }

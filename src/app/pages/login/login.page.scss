@@ -1,0 +1,15 @@
+@import "../../../theme/main";
+
+
+
+@mixin size($coeff) {
+    .item {
+      .btn {
+        border: 1px solid green;
+        margin: auto;
+        width: 80px * $coeff;
+      }
+    }
+}
+
+@include main;
